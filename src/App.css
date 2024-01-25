@@ -91,8 +91,9 @@
   height: 100%;
   width: 20%;
   background-color:blue;
-  font-size:medium;
+  font-size:small;
   border-radius: 5px;
+  position: fixed;
 }
 .nav >div {
   margin: 20px 20px;
@@ -107,6 +108,8 @@
    /* border: 1px solid red;  */
   height:100%;
   width: 80%;
+  margin-left:20%;
+  position: absolute;
 } 
 
 
@@ -121,4 +124,10 @@
  
  .title{
   text-align: left;
+}
+@media only screen and (max-width:460px){
+  button{
+    font-size:xx-small;
+    padding:10px;
+  }
 }
