@@ -10,9 +10,14 @@ import { useEffect, useState } from 'react';
 import Nopage from './Components/Nopage';
 import DashBoard from './Components/DashBoard';
 import { Redirect } from 'react-router-dom';
+import AddTeachers from './Components/AddTeachers.js';
+import Teachers from './Components/Teachers.js';
+import UpdateTeachers from './Components/UpdateTeachers.js';
 
 function App() {
   const [students, setStudents] = useState([]);
+  const [teachers, setTeachers] = useState([]);
+  
 
   useEffect(()=>{
     const getStudents = async () =>{
@@ -25,7 +30,19 @@ function App() {
         }
     }
     getStudents();
-  }, [])
+  }, )
+  useEffect(()=>{
+    const getTeachers = async () =>{
+        const response = await fetch("https://646202d9185dd9877e48af11.mockapi.io/teachers", {
+          method:"GET",
+        }); 
+        const data = await response.json();
+        if(data){
+          setTeachers(data)
+        }
+    }
+    getTeachers();
+  }, )
 
   return (
     <div className="App">
@@ -42,6 +59,13 @@ function App() {
             />
           </Route>
 
+          <Route path="/teachers">
+            <Teachers
+            teachers={teachers}
+            setTeachers={setTeachers}
+            />
+          </Route>
+
           <Route path="/details">
              <Redirect to ="/students"/>
           </Route>
@@ -53,10 +77,24 @@ function App() {
             />
          </Route>
 
+         <Route path="/newadd">
+            <AddTeachers
+              teachers={teachers}
+              setTeachers={setTeachers}
+            />
+         </Route>
+
          <Route path="/edit/:id">
             <UpdateStudents
               students = {students}
               setStudents ={setStudents}
+            />
+         </Route>
+
+         <Route path="/editt/:id">
+            <UpdateTeachers
+             teachers={teachers}
+             setTeachers={setTeachers}
             />
          </Route>
 

@@ -93,6 +93,7 @@
   background-color:blue;
   font-size:medium;
   border-radius: 5px;
+  overflow-y: scroll;
 }
 .nav >div {
   margin: 20px 20px;

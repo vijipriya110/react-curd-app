@@ -24,6 +24,11 @@ const Base = ({ title, description, children }) => {
               <hr></hr>
               <div><button className="sb" onClick={() => history.push("/add")}>Add-Student list</button></div>
               <hr></hr>
+              <div><button className="sb" onClick={() => history.push("/teachers")}>Teachers list</button></div>
+              <hr></hr>
+              <div><button className="sb" onClick={() => history.push("/newadd")}>Add-teacher list</button></div>
+              <hr></hr>
+
               
 
 
