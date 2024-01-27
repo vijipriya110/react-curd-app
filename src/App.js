@@ -1,7 +1,7 @@
 
 import { Switch,Route } from 'react-router-dom';
 import './App.css';
-// import Base from './Base/Base';
+// import Base from './Base/Base'
 import Students from './Components/Students.js';
 import AddStudents from './Components/AddStudents';
 import UpdateStudents from './Components/UpdateStudents';
